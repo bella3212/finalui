@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Orbitron";   /*Can be any text*/
+    src: local("Orbitron-Bold"),
+      url("../fonts/Orbitron-Bold.ttf") format("truetype");
+  }
+
 body {
     background: black;
 }

@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export function Home2() {
+export function Home2({src_path=process.env.REACT_APP_MAIN_TABLE_ROUTE}) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
@@ -67,7 +67,7 @@ export function Home2() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  let host=process.env.REACT_APP_HOST+process.env.REACT_APP_MAIN_TABLE_ROUTE
+  let host=process.env.REACT_APP_HOST+src_path
   let next_page_route='/Home/TPage/'
   const data = getDataFromServer(host);
   const [pk_search, setSearch] = useState("");

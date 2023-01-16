@@ -52,8 +52,8 @@ ReactDOM.render(
               </Route>
             </Route>
         </Route>
-        <Route path={process.env.REACT_APP_SIDE_BAR2_ROUTE} element={<Home2 />}/>
-        <Route path={process.env.REACT_APP_SIDE_BAR3_ROUTE} element={<Home2 />}/>
+        <Route path={process.env.REACT_APP_SIDE_BAR2_ROUTE} element={<Home2 src_path={process.env.REACT_APP_SIDE_BAR2_ROUTE}/>}/>
+        <Route path={process.env.REACT_APP_SIDE_BAR3_ROUTE} element={<Home2 src_path={process.env.REACT_APP_SIDE_BAR3_ROUTE}/>}/>
         <Route path="/" element={<Login />}>
         </Route>
       </Routes>

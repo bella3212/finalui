@@ -1,20 +1,52 @@
-.table_card {
-  width: auto;
-  height: auto;
+table{
+  border: none;
+  border-collapse: collapse;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  
+}
+
+th{
+ 
+  border-top: solid rgba(255, 255, 255, 0.1) 1px;
+  border-bottom: 1px rgb(59, 58, 58);
+  border-right: 1px rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+td{
+  text-align: center;
+  border-top: solid rgba(255, 255, 255, 0.1) 1px;
+  border-bottom: solid 1px rgb(59, 58, 58);
+  border-right: 1px rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  
+}
+
+
+tbody tr {
+  transition: rgba(255, 255, 255, 0.1) 150ms ease-out;
+  word-break: break-all;
+}
+
+tbody tr:hover {
+  background-color: #e4dedeb0;
+  word-break: break-all;
+}
+
+/* .table_card {
+ 
   table-layout: fixed;
   display: "flex";
   background-color: rgb(59, 58, 58);
   word-break: break-all;
-  /* flexDirection: "column"; */
+
 }
 
 .table {
-  /*width: auto;*/
   border-collapse: separate;
   border-radius: 6px;
   border-spacing: 0;
   border: 5px solid #ddd;
-  margin-left: 100px;
+
   word-break: break-all;
   table-layout: fixed;
 }
@@ -35,13 +67,13 @@ th:last-child {
 
 th,
 td {
-  /* margin: 0;*/
+ 
   padding: 0.5rem;
   border-top: solid rgba(255, 255, 255, 0.1) 1px;
   border-bottom: 1px rgb(59, 58, 58);
   border-right: 1px rgba(255, 255, 255, 0.1);
   word-break: break-all;
-  /* box-sizing: border-box; */
+  
 }
 
 th {
@@ -49,7 +81,7 @@ th {
   border-top: none;
   position: sticky;
   word-break: break-all;
-  width: 100%;
+ 
 }
 
 tbody tr {
@@ -62,11 +94,6 @@ tbody tr:hover {
   word-break: break-all;
 }
 
-/* .toggle_columns{
-  background-color: rgba(255, 255, 255, 0.1);
-    border-top: none;
-    position: sticky;
-} */
 
 
 
@@ -75,14 +102,4 @@ tbody tr:hover {
 
 /* Google fonts - Open Sans
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-
-/* colors */
-element {
-  blue: rgba(79, 192, 210, 1);
-  green: rgba(82, 210, 154, 1);
-  yellow: rgba(231, 196, 104, 0.7);
-  orange: rgba(235, 118, 85, 1);
-  dark-bg: rgba(0, 0, 0, 0.9);
-  light-bg: rgba(255, 255, 255, 0.1);
-  text: rgba(255, 255, 255, 0.9);
-}
+ */

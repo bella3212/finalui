@@ -89,7 +89,7 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
     let filters_dict =
     {
         date: {
-            Filter: DateRangeColumnFilter,
+            Filter: DateFilters,
             filter: 'dateFilter'
         },
         select: {

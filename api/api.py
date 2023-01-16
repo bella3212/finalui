@@ -23,18 +23,22 @@ def get_table():
     return {'responses':
         [
             {'type': 'table',
-             'data': {'headers': ['pk', 'name', 'status', 'time_check', 'version'],
+             'data': {'headers': ['pk', 'name', 'status', 'time_check', 'version', 'd_pk','d_type'],
                       'rows': [{'pk': 1,
                                 'name': 'aa',
                                 'status': 'aamoshe',
                                 'time_check': str(datetime.utcnow()-timedelta(days=2)),
-                                'version': '1.2'
+                                'version': '1.2',
+                                'd_pk':'1',
+                                'd_type':'ph'
                                 },
                                {'pk': 2,
                                 'name': 'bb_bla2',
                                 'status': 'bbmoshe2',
                                 'time_check': str(datetime.utcnow()),
-                                'version': '1.3'
+                                'version': '1.3',
+                                'd_pk': '2',
+                                'd_type': 'cp'
                                 }, ]
                       }
              },
@@ -368,11 +372,11 @@ def get_attr():
                     [{'type': 'message', 'data': 'returned 1 results'},
                      {'type': 'table',
                       'data': {'headers': ['key', 'value'],
-                               'rows': [{'key': id,
-                                         'value': 'tt',
+                               'rows': [{'key': f'key{id}',
+                                         'value': 'val1',
                                          },
-                                        {'key': posix,
-                                         'value': 'aa2',
+                                        {'key': f'key{posix}',
+                                         'value': 'val2',
                                          },
                                         {'key': 'last_time',
                                          'value': datetime.now(),

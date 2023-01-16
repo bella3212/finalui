@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/Clock.css"
+import "../fonts/Orbitron-Bold.ttf"
 
 function get_date(is_system_clock) {
     let date;
