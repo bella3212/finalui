@@ -6,7 +6,7 @@ table{
 }
 
 th{
- 
+  background-color: rgba(255, 255, 255, 0.1);
   border-top: solid rgba(255, 255, 255, 0.1) 1px;
   border-bottom: 1px rgb(59, 58, 58);
   border-right: 1px rgba(255, 255, 255, 0.1);

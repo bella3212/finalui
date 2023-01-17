@@ -88,7 +88,8 @@ export function add_dynamic_info(item) {
         rows.forEach(row => {
           div_list.push(
             <div class="column">
-              {row.key}: {row.value}
+             {row.value}
+             {row.key}
             </div>
           )
           div_list = add_extra_icons(row, div_list)

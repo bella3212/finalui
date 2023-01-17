@@ -9,10 +9,6 @@ import { add_dynamic_info } from '../utils/makeData'
 
 
 export default function BaseInformation(info) {
-  console.log(info.info_id)
-  console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
-  console.log(info.posix_location)
-  console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
   let route = process.env.REACT_APP_HOST + process.env.REACT_APP_BASE_INFORMATION_ROUTE
   let data = sendDataToServer(route, info);
   console.log(data)

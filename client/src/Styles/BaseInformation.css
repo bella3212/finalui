@@ -2,8 +2,9 @@
   font-family: 'Niconne', cursive;
   font-size: 15px;
   position: center;
-  width: auto;
-  height: auto;
+  width: 100%;
+  /* width: auto;
+  height: auto; */
   color: rgb(170, 217, 248);
   border-radius: 5px;
   border: solid rgb(78, 78, 78) 2px;

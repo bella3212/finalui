@@ -24,7 +24,7 @@ export function DefaultColumnFilter({
       onChange={e => {
         setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
       }}
-      placeholder={`Search ${count} records...`}
+      // placeholder={`Search ${count} records...`}
     />
   )
 }
@@ -293,8 +293,7 @@ export const DateFilters = (props) => {
           <AiOutlineSync className="resetFilter_icon" />
         </div>
         <div className="apply-filter">
-          <h3>All Transactions</h3>
-          <button onClick={applyFilter} className="applyFilter-btn" id="applyFilter-btn"> Apply Filte </button>
+          <button onClick={applyFilter} className="applyFilter-btn" id="applyFilter-btn"> Search </button>
         </div>
       </div>
     </div>
