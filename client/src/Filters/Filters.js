@@ -24,7 +24,10 @@ export function DefaultColumnFilter({
       onChange={e => {
         setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
       }}
-      // placeholder={`Search ${count} records...`}
+      style={{
+        backgroundColor: '#E4DED0'
+      }}
+    // placeholder={`Search ${count} records...`}
     />
   )
 }
@@ -43,7 +46,7 @@ export function GlobalFilter({
 
   return (
     <span>
-      Search:{' '}
+      {process.env.REACT_APP_SEARCH_GLOBAL_TEXT} : {' '}
       <input
         value={value || ""}
         onChange={e => {
@@ -54,8 +57,11 @@ export function GlobalFilter({
         style={{
           fontSize: '1.1rem',
           border: '0',
+          // backgroundColor: '#e4dedeb0'
         }}
       />
+      <br></br>
+      <br></br>
     </span>
   )
 }
@@ -277,7 +283,7 @@ export const DateFilters = (props) => {
       <div className="datePickerWrapper">
         <div className="Datepicker-grid-container">
           <div className="top">
-            <div className="top">From:<div className="datePickerLabel">{startDate ? startDate.toLocaleDateString("fr-CA") : null}</div>
+            <div className="top"> From:<div className="datePickerLabel">{startDate ? startDate.toLocaleDateString("fr-CA") : null}</div>
               < DatePickerCalendar handleDateChange={handleStartDate} date={startDate} />
             </div>
             {/* <div className="verticalLine"></div> */}
@@ -289,7 +295,7 @@ export const DateFilters = (props) => {
         </div>
       </div>
       <div className="top2">
-        <div className="resetFilter" onClick={autoResetFilter} ><span>Reset</span>
+        <div className="resetFilter" onClick={autoResetFilter} >Reset
           <AiOutlineSync className="resetFilter_icon" />
         </div>
         <div className="apply-filter">
