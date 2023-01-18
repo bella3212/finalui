@@ -5,22 +5,115 @@
     url("../fonts/Ubuntu-Bold.ttf") format("truetype");
 }
 
-.title {
-  font-family: 'Ubuntu-Bold';
-  display: 'flex';
+table {
+  border: none;
+  border-collapse: collapse;
+
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: solid rgba(255, 255, 255, 0.1) 1px;
+  border-bottom: 1px rgb(59, 58, 58);
+  border-right: 1px rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+td {
   text-align: center;
-  text-shadow: 0px 2px 6px #F0E68C;
-  font-size: 28px;
-  color: #F0E68C;
+  border-top: solid rgba(255, 255, 255, 0.1) 1px;
+  border-bottom: solid 1px rgb(59, 58, 58);
+  border-right: 1px rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 
 
-.sub_title {
+tbody tr {
+  transition: rgba(255, 255, 255, 0.1) 150ms ease-out;
+  word-break: break-all;
+}
+
+tbody tr:hover {
+  background-color: #e4dedeb0;
+  word-break: break-all;
+}
+
+.columnscls {
+  font-size: 16px;
   font-family: 'Ubuntu-Bold';
-  display: 'flex';
-  justify-content: 'left';
-  /* align-items: 'center'; */
-  /* margin-left: 50px; */
-  color: #EEE8AA;
-  font-size: 18px;
+
+  /* font-family: 'Courier New', Courier, monospace; */
 }
+
+/* .table_card {
+ 
+  table-layout: fixed;
+  display: "flex";
+  background-color: rgb(59, 58, 58);
+  word-break: break-all;
+
+}
+
+.table {
+  border-collapse: separate;
+  border-radius: 6px;
+  border-spacing: 0;
+  border: 5px solid #ddd;
+
+  word-break: break-all;
+  table-layout: fixed;
+}
+
+td:first-child,
+th:first-child {
+  border-left: none;
+  word-break: break-all;
+}
+
+tr,
+td:last-child,
+th:last-child {
+  border-bottom: 0;
+  border-right: 0;
+  word-break: break-all;
+}
+
+th,
+td {
+ 
+  padding: 0.5rem;
+  border-top: solid rgba(255, 255, 255, 0.1) 1px;
+  border-bottom: 1px rgb(59, 58, 58);
+  border-right: 1px rgba(255, 255, 255, 0.1);
+  word-break: break-all;
+  
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: none;
+  position: sticky;
+  word-break: break-all;
+ 
+}
+
+tbody tr {
+  transition: rgba(255, 255, 255, 0.1) 150ms ease-out;
+  word-break: break-all;
+}
+
+tbody tr:hover {
+  background-color: #e4dedeb0;
+  word-break: break-all;
+}
+
+
+
+
+/*https://codepen.io/ajlohman/pen/GRWYWw*/
+
+
+/* Google fonts - Open Sans
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+ */
