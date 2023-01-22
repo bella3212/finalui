@@ -77,10 +77,12 @@ select {
 .top {
     display: flex;
     flex: auto;
+    align-items: center;
 
 }
 
 .top2 {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
