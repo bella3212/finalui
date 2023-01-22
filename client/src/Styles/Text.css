@@ -1,18 +1,26 @@
+@font-face {
+  font-family: "Ubuntu";
+  /*Can be any text*/
+  src: local("Ubuntu-Bold"),
+    url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+}
+
 .title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu-Bold';
   display: 'flex';
   text-align: center;
-  text-shadow: 0px 4px 10px #9FFFCB;
-  font-size: 21px;
+  text-shadow: 0px 2px 6px #F0E68C;
+  font-size: 28px;
+  color: #F0E68C;
 }
 
 
 .sub_title {
-  font-family: Arial,
-    Helvetica,
-    sans-serif;
+  font-family: 'Ubuntu-Bold';
   display: 'flex';
   justify-content: 'left';
-  align-items: 'center';
-  margin-left: 50px;
+  /* align-items: 'center'; */
+  /* margin-left: 50px; */
+  color: #EEE8AA;
+  font-size: 18px;
 }

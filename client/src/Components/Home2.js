@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export function Home2({src_path=process.env.REACT_APP_MAIN_TABLE_ROUTE}) {
+export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
@@ -67,19 +67,19 @@ export function Home2({src_path=process.env.REACT_APP_MAIN_TABLE_ROUTE}) {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  let host=process.env.REACT_APP_HOST+src_path
-  let next_page_route='/Home/TPage/'
+  let host = process.env.REACT_APP_HOST + src_path
+  let next_page_route = '/Home/TPage/'
   const data = getDataFromServer(host);
   const [pk_search, setSearch] = useState("");
-  
-//const [input, setInput] = useState("");
+
+  //const [input, setInput] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setSearch(event.target[0].value);
     console.log(pk_search)
-    if (pk_search>0){
-      window.location.href=next_page_route+pk_search
+    if (pk_search > 0) {
+      window.location.href = next_page_route + pk_search
     }
   };
 
@@ -110,6 +110,8 @@ export function Home2({src_path=process.env.REACT_APP_MAIN_TABLE_ROUTE}) {
           {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2)}
           {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
           {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)}
+          <br></br>
+          <br></br>
           {data.map((item) =>
             add_dynamic_components(item, process.env.REACT_APP_TPAGE_ROUTE)
           )}
