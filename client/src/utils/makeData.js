@@ -2,7 +2,6 @@ import React from "react";
 import { getColumnsWithFilters } from "../utils/dataFromServer";
 import SubTitle from "../Components/SubTitle";
 import { Table } from '../Components/Table';
-import download from '../images/download.png';
 import "../Styles/BaseInformation.css"
 import high_battery from '../images/high_battery.png';
 import medium_battery from '../images/medium_battery.png';
@@ -60,6 +59,7 @@ function add_extra_icons(row, div_list) {
           src={get_clock_image_by_time_connection(row.value)}
           width="30"
           height="30"
+          alt={row.value}
         />
       </div>
     )
@@ -70,6 +70,7 @@ function add_extra_icons(row, div_list) {
         src={get_battery_image_by_percent(row.value)}
         width="30"
         height="30"
+        alt={row.value}
       />
     </div>
     )
@@ -78,12 +79,13 @@ function add_extra_icons(row, div_list) {
   return div_list
 }
 export function add_dynamic_info(item) {
-  let columns, rows;
+  //let columns;
+  let rows;
   let div_list = [];
   try {
     if (Object.keys(item).length !== 0) {
       if (item.type.normalize() === 'table'.normalize()) {
-        columns = item.data.headers
+        //columns = item.data.headers
         rows = item.data.rows
         rows.forEach(row => {
           div_list.push(
