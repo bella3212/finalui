@@ -2,7 +2,7 @@ import * as React from "react";
 import "../Styles/Text.css"
 import "../Styles/GlobalStyle.css"
 
-import TInterface from '../Interfaces/TInterface'
+//import TInterface from '../Interfaces/TInterface'
 //export default class Title extends React.Component<TInterface, {}> {
 export default class Title extends React.Component {
   render() {

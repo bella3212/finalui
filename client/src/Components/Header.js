@@ -1,7 +1,6 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
@@ -48,7 +47,7 @@ export default function Header({
                     <MenuIcon />
                 </IconButton>
                 <div className={classes.spacer} />
-                <img src={logo} width="30" height="30" />
+                <img src={logo} width="30" height="30" alt="logo img"/>
                 <div className={classes.spacer} />
                 <IconButton
                     color="inherit"

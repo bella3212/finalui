@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTable, useFilters, useGlobalFilter } from 'react-table'
 import { GlobalFilter, DefaultColumnFilter, fuzzyTextFilterFn, IndeterminateCheckbox } from "../Filters/Filters";
 import "../Styles/Table.css"

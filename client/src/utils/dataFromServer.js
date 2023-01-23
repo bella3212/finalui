@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SliderColumnFilter, SelectColumnFilter, DateFilters, DateColumnFilter, DateRangeColumnFilter } from "../Filters/Filters";
-import download from '../images/download.png';
+import { SliderColumnFilter, SelectColumnFilter, DateFilters } from "../Filters/Filters";
 import wifi from '../images/wifi.png';
 
 export function getDataFromServer(route) {
@@ -126,6 +125,7 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
                     src={image_src} //src={download}
                     width="30"
                     height="30"
+                    alt={image_src}
                 />
             )
         }
@@ -152,9 +152,6 @@ function add_filters(item, final_dict, next_page_route, image_src) {
     return final_dict
 }
 
-const foo = () => {
-
-}
 
 // function add_colors(item,final_dict){
 
@@ -173,10 +170,10 @@ export function getColumnsWithFilters(columns_names, next_page_route) {
                 Header: item.charAt(0).toUpperCase() + item.slice(1), //only first letter is in lower case
                 accessor: item.toLowerCase(),
             }
-            if (columns_names[0] == item) { //only the first col is need to do on click
+            if (columns_names[0] === item) { //only the first col is need to do on click
                 final_dict = add_filters(item, final_dict, next_page_route = next_page_route, image_src = image_src)
             } else {
-                if (item == process.env.REACT_APP_IMAGE_COLUMN_NAME) {
+                if (item === process.env.REACT_APP_IMAGE_COLUMN_NAME) {
                     image_src = _get_image(item)
                 }
                 final_dict = add_filters(item, final_dict, next_page_route = null, image_src)
@@ -186,12 +183,6 @@ export function getColumnsWithFilters(columns_names, next_page_route) {
             return (final_dict)
         })
     )
-    // final_columns = [{
-    //     Header: 'Name',
-    //     columns: columns_arr
-    // },
-
-    // ]
     return columns_arr;
 }
 

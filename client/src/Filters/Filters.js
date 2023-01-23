@@ -16,7 +16,7 @@ export function DefaultColumnFilter({
   column: { filterValue, preFilteredRows, setFilter },
 }) {
 
-  const count = preFilteredRows.length
+  // const count = preFilteredRows.length
 
   return (
     <input
@@ -232,9 +232,9 @@ export const DateFilters = (props) => {
   const [endDate, setEndDate] = useState(null);
 
   // attached to onChange event listener of Global filter input box
-  const onChange = useAsyncDebounce(value => {
-    props.setGlobalFilter(value || undefined)
-  }, 200)
+  // const onChange = useAsyncDebounce(value => {
+  //   props.setGlobalFilter(value || undefined)
+  // }, 200)
 
   //called when a user selects filter start-date 
   const handleStartDate = (date) => {
