@@ -7,7 +7,7 @@ function get_date(is_system_clock) {
     if (is_system_clock) {
         let currentTime = new Date().getTime();
         let time_diff = process.env.REACT_APP_CLOCK_DIFF_TIME
-        date = new Date(currentTime + time_diff * 60 * 60 * 1000);
+        date = new Date(currentTime - time_diff * 60 * 60 * 1000);
     } else {
         date = new Date().getTime();
     }

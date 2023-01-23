@@ -134,8 +134,7 @@ export function Table({ columns, data, id_t, isRigth }) {
                 {/* <div id="toggle_columns" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}> */}
                 <div class="row" >
                   <div class="column">
-                    <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle
-                    All
+                    <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle All 
                   </div>
                   <br />
                 </div>
