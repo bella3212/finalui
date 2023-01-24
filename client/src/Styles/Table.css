@@ -10,6 +10,10 @@ table {
   border-collapse: collapse;
 
 }
+.tr{
+  padding: 18px;
+  display: grid;
+}
 
 th {
   background-color: rgba(255, 255, 255, 0.1);

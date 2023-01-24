@@ -104,11 +104,13 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
             <input type="text" />
             <button type="submit">Search</button>
           </form> */}
-
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)}
+          <div style={{display: 'flex'}}>
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)}
+          </div>
+         
           <br></br>
           <br></br>
           {data.map((item) =>

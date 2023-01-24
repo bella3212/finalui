@@ -31,6 +31,4 @@ export function Add_form_for_search(lable_text) {
         </form>
     )
 
-
-
 }

@@ -46,18 +46,22 @@ export function GlobalFilter({
 
   return (
     <span>
-      {process.env.REACT_APP_SEARCH_GLOBAL_TEXT} : {' '}
+      {/* {process.env.REACT_APP_SEARCH_GLOBAL_TEXT} : {' '} */}
       <input
         value={value || ""}
         onChange={e => {
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder={`${count} records...`}
+        placeholder={`${process.env.REACT_APP_SEARCH_GLOBAL_TEXT} (${count} records)`}
         style={{
           fontSize: '1.1rem',
           border: '0',
-          // backgroundColor: '#e4dedeb0'
+          width: '100%',
+          border: '2px solid #025f12',
+          borderRadius: '2px',
+          padding: '8px'
+          // backgroundColor: 'rgb(228, 222, 208)'
         }}
       />
       <br></br>

@@ -121,32 +121,25 @@ export function Table({ columns, data, id_t, isRigth }) {
     <React.Fragment>
 
       <table style={{ width: "100%" }} id={"table" + id_t} {...getTableProps()}>
-        {/* class="center" */}
         <thead>
+          <GlobalFilter
+                preGlobalFilteredRows={preGlobalFilteredRows}
+                globalFilter={state.globalFilter}
+                setGlobalFilter={setGlobalFilter}
+              />
           <tr>
-            <th
+         <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} />  Toggle All  
+                
+             
+            {/* <th
               colSpan={visibleColumns.length}
               style={{
                 textAlign: 'left',
               }}
             >
-              <div id="toggle_columns">
-                {/* <div id="toggle_columns" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}> */}
-                <div class="row" >
-                  <div class="column">
-                    <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle All 
-                  </div>
-                  <br />
-                </div>
-              </div>
-              <GlobalFilter
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-              />
-            </th>
+
+            </th> */}
           </tr>
-          <br></br>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
