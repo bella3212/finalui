@@ -17,6 +17,7 @@ th {
   border-bottom: 1px rgb(59, 58, 58);
   border-right: 1px rgba(255, 255, 255, 0.1);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
 }
 
 td {
@@ -25,7 +26,7 @@ td {
   border-bottom: solid 1px rgb(59, 58, 58);
   border-right: 1px rgba(255, 255, 255, 0.1);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-
+  padding: 0.5rem;
 }
 
 

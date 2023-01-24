@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SliderColumnFilter, SelectColumnFilter, DateFilters } from "../Filters/Filters";
 import wifi from '../images/wifi.png';
+import "../Styles/GlobalStyle.css"
 
 export function getDataFromServer(route) {
 
@@ -121,12 +122,19 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
         },
         image_col: {
             Cell: ({ cell }) => ( //todo check if can to doenload and delete default filter
+            <div class="dropdown">
                 <img
                     src={image_src} //src={download}
                     width="30"
                     height="30"
                     alt={image_src}
                 />
+                <div class="dropdown-content">
+                        <a href="#">D 1</a>
+                        <a href="#">D 2</a>
+                        <a href="#">D 3</a>
+                    </div>
+            </div>
             )
         }
     }
