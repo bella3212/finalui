@@ -308,50 +308,6 @@ export function generateData(data) {
     console.log("ppppp")
     console.log(data)
 
-
-
-
-    // data.map(function (item) {
-    //     if (Object.keys(item).length != 0) {
-    //         console.log("here2")
-    //         console.log(item.type.normalize() === 'table'.normalize())
-    //         if (item.type.normalize() === 'table'.normalize()) {
-    //             console.log("here3")
-    //             columns = getColumnsfromTable(item)
-    //             rows = getRows(item)
-    //             //  let node=document.getElementsByName("tpage_id")
-    //             // node.appendChild(<Table>columns={columns} data={rows} columns_name={columns} </Table>)
-    //             // console.log(container)
-    //         }
-    //         // switch(item.type.normalize()){
-    //         //     case 'table'.normalize():
-    //         //         //table
-    //         //         columns = getColumns(item) 
-    //         //         //tables[row.table].append(<Row>row.data</Row>) 
-    //         //         //formatData.push( <Table columns={columns} data={data_table} columns_name={columns_names} />)
-    //         //         break;
-
-    //         // }
-    //     }
-
-
-
-    // })
-
-    //  return formatData;
 }
 
 
-    // useEffect(() => {
-    //     fetch('/table').then(res => res.json()).then(data => {
-    //       // Setting a data from api
-    //     /*  setdata({
-    //         name: data.Name,
-    //         age: data.Age,
-    //         date: data.Date,
-    //         programming: data.programming,
-    //     });
-    //     */
-    //       return data;
-    //     });
-    //   }, []);
