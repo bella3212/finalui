@@ -1,12 +1,12 @@
-@font-face {
+/* @font-face {
   font-family: "Ubuntu";
-  /*Can be any text*/
+ 
   src: local("Ubuntu-Bold"),
     url("../fonts/Ubuntu-Bold.ttf") format("truetype");
-}
+} */
 
 .title {
-  font-family: 'Ubuntu-Bold';
+  font-family: Ubuntu;
   display: 'flex';
   text-align: center;
   text-shadow: 0px 2px 6px #F0E68C;
@@ -16,7 +16,7 @@
 
 
 .sub_title {
-  font-family: 'Ubuntu-Bold';
+  font-family: Ubuntu;
   display: 'flex';
   justify-content: 'left';
   /* align-items: 'center'; */
