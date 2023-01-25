@@ -1,5 +1,6 @@
 .rectangle {
-  font-family: 'Niconne', cursive;
+  /* font-family: 'Niconne', cursive; */
+  font-family: Ubuntu;
   font-size: 15px;
   position: center;
   width: 100%;
@@ -13,17 +14,17 @@
 }
 
 .column {
-  padding: 8px;
+  padding: 18px;
   display: grid;
 }
 
 .row {
-  font-size: 12px;
+  font-size: 17px;
   display: flex;
 }
 
 .first_row {
-  font-size: 17px;
+  font-size: 22px;
   display: flex;
   font-weight: bold;
 }
