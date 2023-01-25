@@ -13,8 +13,9 @@ import { useParams, useLocation } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 import Clock from "./Clock"
 //import ClipLoader from "react-spinners/ClipLoader";
-
 import "../Styles/GlobalStyle.css"
+import "../fonts/Ubuntu-Bold.ttf"
+
 
 const drawerWidth = 240;
 
