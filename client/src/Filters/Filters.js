@@ -5,6 +5,7 @@ import { useAsyncDebounce } from 'react-table'
 import DatePickerCalendar from "./DatePicker";
 import { AiOutlineSync, } from "react-icons/ai";
 import "../Styles/GlobalStyle.css"
+import "../fonts/Ubuntu-Bold.ttf"
 
 export function fuzzyTextFilterFn(rows, id, filterValue) {
   return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
@@ -16,7 +17,7 @@ export function DefaultColumnFilter({
   column: { filterValue, preFilteredRows, setFilter },
 }) {
 
-  const count = preFilteredRows.length
+  // const count = preFilteredRows.length
 
   return (
     <input
@@ -25,6 +26,7 @@ export function DefaultColumnFilter({
         setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
       }}
       style={{
+        width: '50%',
         backgroundColor: '#E4DED0'
       }}
     // placeholder={`Search ${count} records...`}
@@ -46,18 +48,22 @@ export function GlobalFilter({
 
   return (
     <span>
-      {process.env.REACT_APP_SEARCH_GLOBAL_TEXT} : {' '}
+      {/* {process.env.REACT_APP_SEARCH_GLOBAL_TEXT} : {' '} */}
       <input
         value={value || ""}
         onChange={e => {
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder={`${count} records...`}
+        placeholder={`${process.env.REACT_APP_SEARCH_GLOBAL_TEXT} (${count} records)`}
         style={{
           fontSize: '1.1rem',
           border: '0',
-          // backgroundColor: '#e4dedeb0'
+          width: '100%',
+          border: '2px solid #025f12',
+          borderRadius: '2px',
+          padding: '8px'
+          // backgroundColor: 'rgb(228, 222, 208)'
         }}
       />
       <br></br>
@@ -232,9 +238,9 @@ export const DateFilters = (props) => {
   const [endDate, setEndDate] = useState(null);
 
   // attached to onChange event listener of Global filter input box
-  const onChange = useAsyncDebounce(value => {
-    props.setGlobalFilter(value || undefined)
-  }, 200)
+  // const onChange = useAsyncDebounce(value => {
+  //   props.setGlobalFilter(value || undefined)
+  // }, 200)
 
   //called when a user selects filter start-date 
   const handleStartDate = (date) => {
