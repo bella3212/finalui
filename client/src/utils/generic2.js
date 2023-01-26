@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Styles/GlobalStyle.css"
+import "../fonts/Ubuntu-Bold.ttf"
 
 
 export function Add_form_for_search(lable_text) {

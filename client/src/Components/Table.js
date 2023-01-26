@@ -3,6 +3,8 @@ import { useTable, useFilters, useGlobalFilter } from 'react-table'
 import { GlobalFilter, DefaultColumnFilter, fuzzyTextFilterFn, IndeterminateCheckbox } from "../Filters/Filters";
 import "../Styles/Table.css"
 import "../Styles/GlobalStyle.css"
+import "../fonts/Ubuntu-Bold.ttf"
+import { TableFooter } from '@mui/material';
 // import TableFooter from "./TableFooter";
 // import GridLayout from "react-grid-layout";
 // import Card from "@material-ui/core/Card";
@@ -104,8 +106,8 @@ export function Table({ columns, data, id_t, isRigth }) {
 
 
   // const [page, setPage] = useState(1);
-  // const num=10;
-  // const { slice, range } = useTable({rows,page,num})
+  // const num = 10;
+  // const { slice, range } = useTable({ rows, page, num })
 
   // const layout = [
   //   { i: "a", x: 0, y: 0, w: 1, h: 2, static: true },
@@ -123,14 +125,12 @@ export function Table({ columns, data, id_t, isRigth }) {
       <table style={{ width: "100%" }} id={"table" + id_t} {...getTableProps()}>
         <thead>
           <GlobalFilter
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-              />
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
           <tr>
-         <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} />  Toggle All  
-                
-             
+            <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} />  Toggle All
             {/* <th
               colSpan={visibleColumns.length}
               style={{

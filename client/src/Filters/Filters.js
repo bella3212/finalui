@@ -5,6 +5,7 @@ import { useAsyncDebounce } from 'react-table'
 import DatePickerCalendar from "./DatePicker";
 import { AiOutlineSync, } from "react-icons/ai";
 import "../Styles/GlobalStyle.css"
+import "../fonts/Ubuntu-Bold.ttf"
 
 export function fuzzyTextFilterFn(rows, id, filterValue) {
   return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
@@ -25,6 +26,7 @@ export function DefaultColumnFilter({
         setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
       }}
       style={{
+        width: '50%',
         backgroundColor: '#E4DED0'
       }}
     // placeholder={`Search ${count} records...`}

@@ -15,6 +15,11 @@ table {
   display: grid;
 }
 
+.tr {
+  padding: 18px;
+  display: grid;
+}
+
 th {
   background-color: rgba(255, 255, 255, 0.1);
   border-top: solid rgba(255, 255, 255, 0.1) 1px;
@@ -35,6 +40,7 @@ td {
 
 
 tbody tr {
+  font-family: Ubuntu;
   transition: rgba(255, 255, 255, 0.1) 150ms ease-out;
   word-break: break-all;
 }
@@ -46,7 +52,7 @@ tbody tr:hover {
 
 .columnscls {
   font-size: 16px;
-  font-family: 'Ubuntu-Bold';
+  font-family: Ubuntu;
 
   /* font-family: 'Courier New', Courier, monospace; */
 }

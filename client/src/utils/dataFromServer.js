@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { SliderColumnFilter, SelectColumnFilter, DateFilters } from "../Filters/Filters";
 import wifi from '../images/wifi.png';
 import "../Styles/GlobalStyle.css"
+import "../fonts/Ubuntu-Bold.ttf"
+
 
 export function getDataFromServer(route) {
 
