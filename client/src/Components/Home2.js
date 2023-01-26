@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline, ThemeProvider, createMuiTheme } from "@material-ui/core";
@@ -9,7 +9,6 @@ import { getDataFromServer } from "../utils/dataFromServer"
 import Title from "./Title"
 import add_dynamic_components from '../utils/makeData'
 import { Add_form_for_search } from '../utils/generic2'
-import { Link } from 'react-router-dom';
 import Clock from "./Clock"
 
 const drawerWidth = 240;
@@ -74,14 +73,14 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
 
   //const [input, setInput] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSearch(event.target[0].value);
-    console.log(pk_search)
-    if (pk_search > 0) {
-      window.location.href = next_page_route + pk_search
-    }
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   setSearch(event.target[0].value);
+  //   console.log(pk_search)
+  //   if (pk_search > 0) {
+  //     window.location.href = next_page_route + pk_search
+  //   }
+  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -105,11 +104,14 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
             <input type="text" />
             <button type="submit">Search</button>
           </form> */}
-
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)}
+          
+          {/* <div style={{display: 'flex', left: '100px'}}> */}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)}
+          {/* </div> */}
+         
           <br></br>
           <br></br>
           {data.map((item) =>

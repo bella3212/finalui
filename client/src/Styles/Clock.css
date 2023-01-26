@@ -14,7 +14,7 @@ body {
     left: 20%;
     transform: translateX(-50%) translateY(-50%);
     color: #025f12;
-    font-size: 20px;
+    font-size: 22px;
     font-family: Orbitron;
     letter-spacing: 7px;
 }
@@ -24,8 +24,21 @@ body {
     left: 20%;
     transform: translateX(-50%) translateY(-50%);
     color: #025f12;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Orbitron;
     letter-spacing: 2px;
 }
+
+/* .rectangle_clock {
+   
+    left: 20%;
+    width: 100px;
+    height: 100px;
+    color: #F0E68C;
+    border-radius: 5px;
+    border: solid #F0E68C 1px; 
+    
+  
+  } */
+  
 

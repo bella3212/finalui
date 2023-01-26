@@ -3,7 +3,7 @@ import "../Styles/Text.css"
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Bold.ttf"
 
-import TInterface from '../Interfaces/TInterface'
+//import TInterface from '../Interfaces/TInterface'
 //export default class Title extends React.Component<TInterface, {}> {
 export default class Title extends React.Component {
   render() {

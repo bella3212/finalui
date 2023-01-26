@@ -10,6 +10,10 @@ table {
   border-collapse: collapse;
 
 }
+.tr{
+  padding: 18px;
+  display: grid;
+}
 
 .tr {
   padding: 18px;

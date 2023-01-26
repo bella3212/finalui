@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SliderColumnFilter, SelectColumnFilter, DateFilters, DateColumnFilter, DateRangeColumnFilter } from "../Filters/Filters";
-import download from '../images/download.png';
+import { SliderColumnFilter, SelectColumnFilter, DateFilters } from "../Filters/Filters";
 import wifi from '../images/wifi.png';
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Bold.ttf"
@@ -125,11 +124,19 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
         },
         image_col: {
             Cell: ({ cell }) => ( //todo check if can to doenload and delete default filter
+            <div class="dropdown">
                 <img
                     src={image_src} //src={download}
                     width="30"
                     height="30"
+                    alt={image_src}
                 />
+                <div class="dropdown-content">
+                        <a href="#">D 1</a>
+                        <a href="#">D 2</a>
+                        <a href="#">D 3</a>
+                    </div>
+            </div>
             )
         }
     }
@@ -155,9 +162,6 @@ function add_filters(item, final_dict, next_page_route, image_src) {
     return final_dict
 }
 
-const foo = () => {
-
-}
 
 // function add_colors(item,final_dict){
 
@@ -176,10 +180,10 @@ export function getColumnsWithFilters(columns_names, next_page_route) {
                 Header: item.charAt(0).toUpperCase() + item.slice(1), //only first letter is in lower case
                 accessor: item.toLowerCase(),
             }
-            if (columns_names[0] == item) { //only the first col is need to do on click
+            if (columns_names[0] === item) { //only the first col is need to do on click
                 final_dict = add_filters(item, final_dict, next_page_route = next_page_route, image_src = image_src)
             } else {
-                if (item == process.env.REACT_APP_IMAGE_COLUMN_NAME) {
+                if (item === process.env.REACT_APP_IMAGE_COLUMN_NAME) {
                     image_src = _get_image(item)
                 }
                 final_dict = add_filters(item, final_dict, next_page_route = null, image_src)
@@ -189,12 +193,6 @@ export function getColumnsWithFilters(columns_names, next_page_route) {
             return (final_dict)
         })
     )
-    // final_columns = [{
-    //     Header: 'Name',
-    //     columns: columns_arr
-    // },
-
-    // ]
     return columns_arr;
 }
 
@@ -312,50 +310,6 @@ export function generateData(data) {
     console.log("ppppp")
     console.log(data)
 
-
-
-
-    // data.map(function (item) {
-    //     if (Object.keys(item).length != 0) {
-    //         console.log("here2")
-    //         console.log(item.type.normalize() === 'table'.normalize())
-    //         if (item.type.normalize() === 'table'.normalize()) {
-    //             console.log("here3")
-    //             columns = getColumnsfromTable(item)
-    //             rows = getRows(item)
-    //             //  let node=document.getElementsByName("tpage_id")
-    //             // node.appendChild(<Table>columns={columns} data={rows} columns_name={columns} </Table>)
-    //             // console.log(container)
-    //         }
-    //         // switch(item.type.normalize()){
-    //         //     case 'table'.normalize():
-    //         //         //table
-    //         //         columns = getColumns(item) 
-    //         //         //tables[row.table].append(<Row>row.data</Row>) 
-    //         //         //formatData.push( <Table columns={columns} data={data_table} columns_name={columns_names} />)
-    //         //         break;
-
-    //         // }
-    //     }
-
-
-
-    // })
-
-    //  return formatData;
 }
 
 
-    // useEffect(() => {
-    //     fetch('/table').then(res => res.json()).then(data => {
-    //       // Setting a data from api
-    //     /*  setdata({
-    //         name: data.Name,
-    //         age: data.Age,
-    //         date: data.Date,
-    //         programming: data.programming,
-    //     });
-    //     */
-    //       return data;
-    //     });
-    //   }, []);
