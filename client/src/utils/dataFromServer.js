@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SliderColumnFilter, SelectColumnFilter, DateFilters } from "../Filters/Filters";
 import wifi from '../images/wifi.png';
-import android_80 from '../images/android_80.png';
+import os_android from '../images/os_android.png';
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Regular.ttf"
 
@@ -128,8 +128,8 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
             <div class="dropdown">
                 <img
                     src={image_src} //src={download}
-                    width="30"
-                    height="30"
+                    width="40"
+                    height="50"
                     alt={image_src}
                 />
                 <div class="dropdown-content">
@@ -170,7 +170,7 @@ function add_filters(item, final_dict, next_page_route, image_src) {
 function _get_image(column_name) {
     //TODO update logic of this function
     //need to get image like the type of d 
-    return android_80
+    return os_android
 }
 export function getColumnsWithFilters(columns_names, next_page_route) {
     let black_list = process.env.REACT_APP_BLACK_LIST_COLUMN.split(',')
