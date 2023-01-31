@@ -4,7 +4,7 @@ import { SliderColumnFilter, SelectColumnFilter, DateFilters } from "../Filters/
 import wifi from '../images/wifi.png';
 import android_80 from '../images/android_80.png';
 import "../Styles/GlobalStyle.css"
-import "../fonts/Ubuntu-Bold.ttf"
+import "../fonts/Ubuntu-Regular.ttf"
 
 
 export function getDataFromServer(route) {
@@ -178,7 +178,7 @@ export function getColumnsWithFilters(columns_names, next_page_route) {
     let columns_arr = columns_names.filter(item => !black_list.includes(item)).map(
         (item => {
             let final_dict = {
-                Header: item.charAt(0).toUpperCase() + item.slice(1), //only first letter is in lower case
+                Header: item, //only first letter is in lower case
                 accessor: item.toLowerCase(),
             }
             if (columns_names[0] === item) { //only the first col is need to do on click

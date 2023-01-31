@@ -21,7 +21,7 @@ def get_current_time():
 @app.route('/table')
 def get_table():
     return {'responses':
-        [
+        [{'type': 'message', 'data': 'returned 1 results'},
             {'type': 'table',
              'data': {'headers': ['pk', 'name', 'status', 'time_check', 'version', 'd_pk','d_type'],
                       'rows': [{'pk': 1,

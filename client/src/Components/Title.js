@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../Styles/Text.css"
 import "../Styles/GlobalStyle.css"
-import "../fonts/Ubuntu-Bold.ttf"
+import "../fonts/Ubuntu-Regular.ttf"
 
 //import TInterface from '../Interfaces/TInterface'
 //export default class Title extends React.Component<TInterface, {}> {

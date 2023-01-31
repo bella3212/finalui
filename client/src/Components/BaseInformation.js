@@ -4,7 +4,7 @@ import "../Styles/BaseInformation.css"
 import "../Styles/GlobalStyle.css"
 import { sendDataToServer } from "../utils/dataFromServer"
 import { add_dynamic_info } from '../utils/makeData'
-import "../fonts/Ubuntu-Bold.ttf"
+import "../fonts/Ubuntu-Regular.ttf"
 
 
 

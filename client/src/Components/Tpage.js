@@ -14,7 +14,7 @@ import ReactLoading from 'react-loading';
 import Clock from "./Clock"
 //import ClipLoader from "react-spinners/ClipLoader";
 import "../Styles/GlobalStyle.css"
-import "../fonts/Ubuntu-Bold.ttf"
+import "../fonts/Ubuntu-Regular.ttf"
 
 
 const drawerWidth = 240;
@@ -116,7 +116,7 @@ export function TPage() {
                     >
                         <div className={classes.drawerHeader} />
                         <Clock txt={process.env.REACT_APP_NAME_TIME} is_system_clock="true"></Clock>
-                        <Title message="Summery of" pk={t_id} />
+                        <Title message="Summary of" pk={t_id} />
                         <BaseInformation info_id={t_id} posix_location={posix_location} />
                         <br></br>
                         {/* <div className="rectangle" > */}

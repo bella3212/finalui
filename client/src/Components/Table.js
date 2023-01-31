@@ -3,7 +3,7 @@ import { useTable, useFilters, useGlobalFilter } from 'react-table'
 import { GlobalFilter, DefaultColumnFilter, fuzzyTextFilterFn, IndeterminateCheckbox } from "../Filters/Filters";
 import "../Styles/Table.css"
 import "../Styles/GlobalStyle.css"
-import "../fonts/Ubuntu-Bold.ttf"
+import "../fonts/Ubuntu-Regular.ttf"
 import { TableFooter } from '@mui/material';
 // import TableFooter from "./TableFooter";
 // import GridLayout from "react-grid-layout";

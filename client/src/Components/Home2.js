@@ -114,8 +114,8 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
          
           <br></br>
           <br></br>
-          {data.map((item) =>
-            add_dynamic_components(item, process.env.REACT_APP_TPAGE_ROUTE)
+          {data.map((item, index) =>
+            add_dynamic_components(item, process.env.REACT_APP_TPAGE_ROUTE,index)
           )}
           {/* <Content /> */}
         </main>
