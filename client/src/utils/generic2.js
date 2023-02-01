@@ -25,10 +25,10 @@ export function Add_form_for_search(lable_text, filters_from_config) {
         <form onSubmit={handleSubmit} class="sideBySideForm">
             <div class="row">
                 <div class="column"> {lable_text}</div>
-                <input class="form-control" type="text" id={"filter_key_" + lable_text} list={lable_text} autocomplete="off" />
-                <datalist id={lable_text} >
+                <input class="form-control" type="text" id={"filter_key_" + lable_text} list={lable_text} autocomplete="off" placeholder="Choose to Search" />
+                <datalist id={lable_text} role="listbox">
                     {filters_list.map((item) =>
-                        <option value={item}></option>
+                        <option id={item} value={item}></option>
                     )}
                 </datalist>
                 <input type="text" id={"filter_value_" + lable_text} />
