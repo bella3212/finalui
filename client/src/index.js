@@ -10,29 +10,41 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const envSettings = window;
+let system_filters_list = process.env.REACT_APP_SYSTEM_FILTERS_LIST.split(',')
+let real_filters_list = process.env.REACT_APP_REAL_FILTERS_LIST.split(',')
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/Home" >
           <Route path="" element={<Home2 />} />
-            <Route path="TPage"  >
-              <Route path=":t_id">
-                <Route path="" element={<TPage />} />
-                <Route path='products' element={<Ppage />} />
-              </Route>
-              
-
-
+          <Route path="TPage"  >
+            <Route path=":t_id">
+              <Route path="" element={<TPage />} />
+              <Route path='products' element={<Ppage />} />
             </Route>
 
-            <Route path={`TPage/${envSettings.REACT_APP_SEARCH_TEXT_1}`}>
+
+
+          </Route>
+          {system_filters_list.map((item) =>
+            <Route path={`TPage/${item}`}>
               <Route path=":t_id">
                 <Route path="" element={<TPage />} />
-               
+
               </Route>
             </Route>
+          )}
+          {real_filters_list.map((item) =>
+            <Route path={`TPage/${item}`}>
+              <Route path=":t_id">
+                <Route path="" element={<TPage />} />
 
+              </Route>
+            </Route>
+          )}
+
+          {/* 
             <Route path={`TPage/${process.env.REACT_APP_SEARCH_TEXT_2}`} >
               <Route path=":t_id">
                 <Route path="" element={<TPage />} />
@@ -50,10 +62,10 @@ ReactDOM.render(
                 <Route path="" element={<TPage />} />
                
               </Route>
-            </Route>
+            </Route> */}
         </Route>
-        <Route path={process.env.REACT_APP_SIDE_BAR2_ROUTE} element={<Home2 src_path={process.env.REACT_APP_SIDE_BAR2_ROUTE}/>}/>
-        <Route path={process.env.REACT_APP_SIDE_BAR3_ROUTE} element={<Home2 src_path={process.env.REACT_APP_SIDE_BAR3_ROUTE}/>}/>
+        <Route path={process.env.REACT_APP_SIDE_BAR2_ROUTE} element={<Home2 src_path={process.env.REACT_APP_SIDE_BAR2_ROUTE} />} />
+        <Route path={process.env.REACT_APP_SIDE_BAR3_ROUTE} element={<Home2 src_path={process.env.REACT_APP_SIDE_BAR3_ROUTE} />} />
         <Route path="/" element={<Login />}>
         </Route>
       </Routes>

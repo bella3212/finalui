@@ -100,22 +100,17 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
           <div className={classes.drawerHeader} />
           <Clock txt={process.env.REACT_APP_NAME_TIME} is_system_clock="true"></Clock>
           <Title message={process.env.REACT_APP_TITLE_MESSAGE} />
-          {/* <form onSubmit={handleSubmit}>
-            <input type="text" />
-            <button type="submit">Search</button>
-          </form> */}
-          
-          {/* <div style={{display: 'flex', left: '100px'}}> */}
-            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1)}
-            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2)}
-            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
-            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)}
+
+          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1, process.env.REACT_APP_SYSTEM_FILTERS_LIST)}
+          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2, process.env.REACT_APP_REAL_FILTERS_LIST)}
+          {/* {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
+            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)} */}
           {/* </div> */}
-         
+
           <br></br>
           <br></br>
           {data.map((item, index) =>
-            add_dynamic_components(item, process.env.REACT_APP_TPAGE_ROUTE,index)
+            add_dynamic_components(item, process.env.REACT_APP_TPAGE_ROUTE, index)
           )}
           {/* <Content /> */}
         </main>
