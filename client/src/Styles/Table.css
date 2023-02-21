@@ -57,6 +57,21 @@ tbody tr:hover {
   /* font-family: 'Courier New', Courier, monospace; */
 }
 
+.btnGlobalSearch{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #025f12;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+  margin-left: 0%;
+}
+
 /* .table_card {
  
   table-layout: fixed;

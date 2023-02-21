@@ -10,11 +10,6 @@ import "../fonts/Ubuntu-Regular.ttf"
 export function getDataFromServer(route) {
 
     const [finalData, setData] = useState([{}]);
-    // fetch(route).then(response=>{
-    //     const data=response.json()
-    //     setData(data.responses);
-    // })
-
     ///https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
     React.useEffect(function effectFunction() {
         async function fetchData() {
@@ -108,9 +103,6 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
                 <Link to={`${next_page_route}/${cell.value}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                     {cell.value}
                 </Link>
-                //      <Link to={`/Home/TPage/${cell.value}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                //      {cell.value}
-                //  </Link>
             )
         },
         check_box: {
@@ -118,9 +110,6 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
                 <Link to={`${next_page_route}/${cell.pk}`}>
                     <input type="checkbox" />
                 </Link>
-                //      <Link to={`/Home/TPage/${cell.pk}`}>
-                //      <input type="checkbox" />
-                //  </Link>
             )
         },
         image_col: {
@@ -167,6 +156,7 @@ function add_filters(item, final_dict, next_page_route, image_src) {
 // function add_colors(item,final_dict){
 
 // }
+
 function _get_image(column_name) {
     //TODO update logic of this function
     //need to get image like the type of d 
@@ -184,9 +174,9 @@ export function getColumnsWithFilters(columns_names, next_page_route) {
             if (columns_names[0] === item) { //only the first col is need to do on click
                 final_dict = add_filters(item, final_dict, next_page_route = next_page_route, image_src = image_src)
             } else {
-                if (item === process.env.REACT_APP_IMAGE_COLUMN_NAME) {
-                    image_src = _get_image(item)
-                }
+                // if (item === process.env.REACT_APP_IMAGE_COLUMN_NAME) {
+                //     image_src = _get_image(item)
+                // }
                 final_dict = add_filters(item, final_dict, next_page_route = null, image_src)
             }
 

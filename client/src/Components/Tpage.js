@@ -83,10 +83,13 @@ export function TPage() {
     const location = useLocation();
     const location_arr = location.pathname.split('/')
     let posix_location = location_arr[location_arr.length - 2];
+    let new_posix=location_arr.slice(-3,-1)
+    let posix_after_splitted=new_posix.join('/')
     console.log("#####################")
     console.log(posix_location)
+    console.log(location)
     console.log("#####################")
-    let route = process.env.REACT_APP_HOST + '/' + posix_location;
+    let route = process.env.REACT_APP_HOST + '/' + posix_after_splitted;
     //let route=process.env.REACT_APP_HOST+'/t'
 
     let data = sendDataToServer(route, t_id)

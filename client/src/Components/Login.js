@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/Login.css';
 import { useNavigate } from "react-router-dom";
 import { GenericStyle } from '../app_styles';
-
+import Player from "./Player";
 import useSound from 'use-sound';
 import boopSfx from '../sound/boopSfx.mp3';
 //import MagicBell, { FloatingNotificationInbox } from '@magicbell/magicbell-react';
@@ -55,6 +55,14 @@ export default function Login() {
     // });
     // setToken(token);
   }
+
+  const Howl = require('howler').Howl;
+  const play_am = () => {
+    const sound = new Howl({
+      src: ['../videos/amr.amr']
+    });
+    sound.play();
+  }
   return (
     // <ToolboxLayout />
     <GenericStyle>
@@ -74,6 +82,7 @@ export default function Login() {
             <br></br>
             <button class="button" type="submit" onClick={route_to_home}><span>Submit </span></button>
           </div>
+         < Player/>
         </form>
       </div>
     </GenericStyle>

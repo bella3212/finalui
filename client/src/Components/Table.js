@@ -5,6 +5,9 @@ import "../Styles/Table.css"
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Regular.ttf"
 import { TableFooter } from '@mui/material';
+import os_android from '../images/os_android.png';
+import os_ios from '../images/os_ios.png';
+import { EventNote } from "@material-ui/icons";
 // import TableFooter from "./TableFooter";
 // import GridLayout from "react-grid-layout";
 // import Card from "@material-ui/core/Card";
@@ -72,6 +75,20 @@ export function Table({ columns, data, id_t, isRigth }) {
     }),
     []
   )
+ 
+  const swap_row_date_to_image = (row) => {
+    console.log("hereeeee")
+    const item_to_image={
+      'android':os_android,
+      'ios':os_ios
+    }
+    let item=row.values[process.env.REACT_APP_IMAGE_COLUMN_NAME]
+    console.log(item)
+    row.values[process.env.REACT_APP_IMAGE_COLUMN_NAME]=item_to_image[item]
+    console.log(row)
+    // if row.values[REACT_APP_IMAGE_COLUMN_NAME]
+    return row
+  };
 
   const {
     getTableProps,
@@ -118,17 +135,18 @@ export function Table({ columns, data, id_t, isRigth }) {
   let num_of_columns = columns.length
   let width_f = (100 / num_of_columns).toString() + "%"
   console.log(width_f)
+
   return (
     // <Card id="table_card" class="table_card">
     <React.Fragment>
 
       <table style={{ width: "100%" }} id={"table" + id_t} {...getTableProps()}>
         <thead>
-          <GlobalFilter
+          {/* <GlobalFilter
             preGlobalFilteredRows={preGlobalFilteredRows}
             globalFilter={state.globalFilter}
             setGlobalFilter={setGlobalFilter}
-          />
+          /> */}
           <tr>
             <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} />  Toggle All
             {/* <th
@@ -157,6 +175,7 @@ export function Table({ columns, data, id_t, isRigth }) {
         <tbody {...getTableBodyProps()}>
           {rows.map((row, i) => {
             prepareRow(row)
+            row=swap_row_date_to_image(row)
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
@@ -171,7 +190,7 @@ export function Table({ columns, data, id_t, isRigth }) {
 
       {/* <TableFooter range={range} slice={slice} setPage={setPage} page={page} /> */}
       <br />
-
+      
     </React.Fragment >
     // </Card>
   )

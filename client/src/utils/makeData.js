@@ -24,7 +24,7 @@ export default function add_dynamic_components(item, route_path = null, index=0)
       rows = item.data.rows
       let columns_with_filters = getColumnsWithFilters(columns, route_path) //TODO CHECK HOW CAN DO IT WITH React.useMemo(() => {
       return <Table columns={columns_with_filters} data={rows} isRigth={isRigth} />
-    } else if (item.type.normalize() === 'message'.normalize() && index > 0) { // the index check is beacuse no need the message of returned X results
+    } else if (item.type.normalize() === 'message'.normalize() && !item.data.toLowerCase().includes('return')) { // the index check is beacuse no need the message of returned X results
       return <SubTitle title={item.data} />
 
     }

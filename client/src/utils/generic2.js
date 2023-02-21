@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Regular.ttf"
 
 
-export function Add_form_for_search(lable_text, filters_from_config) {
-    let next_page_route = '/Home/TPage/'
+export function Add_form_for_search(lable_text, filters_from_config,location_path) {
+   //let next_page_route = '/Home/TPage/' 
+    //let next_page_route= src_path==null ? '/Home/TPage/' : '/PPage/'
     const [pk_search, setSearch] = useState({});
     let filters_list = filters_from_config.split(',')
     const handleSubmit = (event) => {
@@ -16,8 +18,7 @@ export function Add_form_for_search(lable_text, filters_from_config) {
         event.preventDefault();
         setSearch(dict);
         console.log(pk_search)
-
-        window.location.href = next_page_route + filter_key + '/' + filter_value
+        window.location.href = location_path +'/'+ filter_key + '/' + filter_value
 
     };
     return (

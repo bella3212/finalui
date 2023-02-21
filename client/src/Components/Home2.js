@@ -10,6 +10,7 @@ import Title from "./Title"
 import add_dynamic_components from '../utils/makeData'
 import { Add_form_for_search } from '../utils/generic2'
 import Clock from "./Clock"
+import { useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -45,6 +46,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
+  let location_path = useLocation().pathname;
+  if (location_path.split('/').length==2){
+    location_path=process.env.REACT_APP_TPAGE_ROUTE
+  }
+  // const location_arr = location.pathname.split('/')
+  // let posix_location = location_arr[location_arr.length - 2];
+  
+
+
+
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
@@ -66,8 +77,9 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+  //let to_host=src_path==null ? process.env.REACT_APP_MAIN_TABLE_ROUTE : src_path // if src_path!=null -> src_path else: get from config
   let host = process.env.REACT_APP_HOST + src_path
-  let next_page_route = '/Home/TPage/'
+  //let next_page_route = '/Home/TPage/'
   const data = getDataFromServer(host);
   const [pk_search, setSearch] = useState("");
 
@@ -81,6 +93,8 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
   //     window.location.href = next_page_route + pk_search
   //   }
   // };
+
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -101,16 +115,11 @@ export function Home2({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
           <Clock txt={process.env.REACT_APP_NAME_TIME} is_system_clock="true"></Clock>
           <Title message={process.env.REACT_APP_TITLE_MESSAGE} />
 
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1, process.env.REACT_APP_SYSTEM_FILTERS_LIST)}
-          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_2, process.env.REACT_APP_REAL_FILTERS_LIST)}
-          {/* {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_3)}
-            {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_4)} */}
-          {/* </div> */}
-
+          {Add_form_for_search(process.env.REACT_APP_SEARCH_TEXT_1, process.env.REACT_APP_SYSTEM_FILTERS_LIST, location_path)}
           <br></br>
           <br></br>
           {data.map((item, index) =>
-            add_dynamic_components(item, process.env.REACT_APP_TPAGE_ROUTE, index)
+            add_dynamic_components(item, location_path, index)
           )}
           {/* <Content /> */}
         </main>
