@@ -5,7 +5,7 @@ import wifi from '../images/wifi.png';
 import os_android from '../images/os_android.png';
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Regular.ttf"
-
+import download from '../images/download.png';
 
 export function getDataFromServer(route) {
 
@@ -114,19 +114,27 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
         },
         image_col: {
             Cell: ({ cell }) => ( //todo check if can to doenload and delete default filter
-            <div class="dropdown">
                 <img
-                    src={image_src} //src={download}
+                    src={download} //src={image_src} //src={download}
                     width="40"
-                    height="50"
+                    height="40"
                     alt={image_src}
+                    onclick="myfunction()"
                 />
-                <div class="dropdown-content">
-                        <a href="#">D 1</a>
-                        <a href="#">D 2</a>
-                        <a href="#">D 3</a>
-                    </div>
-            </div>
+                //  <div class="dropdown">
+
+                //     <img
+                //         src={image_src} //src={image_src} //src={download}
+                //         width="40"
+                //         height="50"
+                //         alt={image_src}
+                //     />
+                //     <div class="dropdown-content">
+                //         <a href="#">D 1</a>
+                //         <a href="#">D 2</a>
+                //         <a href="#">D 3</a>
+                //     </div>
+                // </div>
             )
         }
     }
@@ -143,7 +151,9 @@ function add_filters(item, final_dict, next_page_route, image_src) {
     if (item.includes('status') || item.includes('type')) {
         final_dict = Object.assign({}, final_dict, parse_columns_filters['select']);
     }
-    if (image_src != null) {
+    if (item == process.env.REACT_APP_COLUMN_TO_IMAGE) {
+        image_src = process.env.REACT_APP_PATH_COLUMN_IMAGE
+        console.log(image_src)
         final_dict = Object.assign({}, final_dict, parse_columns_filters['image_col']);
     }
     if (next_page_route != null) {
