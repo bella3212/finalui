@@ -45,10 +45,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export function PPage({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
+export function PPage({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE2 }) {
   let location_path = useLocation().pathname;
-  if (location_path.split('/').length==2){
-    location_path=process.env.REACT_APP_TPAGE_ROUTE
+  if (location_path.split('/').length == 2) {
+    location_path = process.env.REACT_APP_MAIN_TABLE_ROUTE2
   }
 
   const classes = useStyles();
@@ -72,13 +72,10 @@ export function PPage({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  //let to_host=src_path==null ? process.env.REACT_APP_MAIN_TABLE_ROUTE : src_path // if src_path!=null -> src_path else: get from config
+
   let host = process.env.REACT_APP_HOST + src_path
-  //let next_page_route = '/Home/TPage/'
   const data = getDataFromServer(host);
   const [pk_search, setSearch] = useState("");
-
-
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
@@ -102,7 +99,7 @@ export function PPage({ src_path = process.env.REACT_APP_MAIN_TABLE_ROUTE }) {
           <br></br>
           <br></br>
           {data.map((item, index) =>
-            add_dynamic_components(item, location_path, index)
+            add_dynamic_components(item, null, index) //route_path = null -> not need to link 
           )}
           {/* <Content /> */}
         </main>
