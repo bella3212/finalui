@@ -49,7 +49,7 @@ ReactDOM.render(
 
 
           {/* <Route path="" element={<Home2 src_path={process.env.REACT_APP_MAIN_TABLE_ROUTE2} />}  /> */}
-          <Route path="P" element={<Home2 src_path={process.env.REACT_APP_MAIN_TABLE_ROUTE2} />} >
+          <Route path="P" element={<PPage />} >
             <Route path=":t_id">
               <Route path="" element={<PPage />} />
               {/* <Route path='products' element={<Ppage />} /> */}
