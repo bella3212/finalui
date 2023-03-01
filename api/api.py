@@ -17,7 +17,20 @@ CORS(app)
 def get_current_time():
     return {'time': time.time()}
 
+@app.route('/download', methods=['POST', 'GET'])
+def get_download():
+    request_id = request.data.decode()
+    print(request_id)
+    if request_id:
+        return {'responses':
+                    [{'type': 'message', 'data': 'download1'},
+                     {'type': 'message', 'data': 'download2'},
+                     ],
+                'had_error': False,
+                'response_type': 'some_type'
+                }
 
+    return {}
 
 
 @app.route('/table') # in use - /HOME
