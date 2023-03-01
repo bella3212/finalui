@@ -20,7 +20,7 @@ def get_current_time():
 
 
 
-@app.route('/table')
+@app.route('/table') # in use - /HOME
 def get_table():
     return {'responses':
         [{'type': 'message', 'data': 'returned 1 results'},
@@ -49,6 +49,27 @@ def get_table():
         'response_type': 'some_type'
     }
 
+
+@app.route('/table_p') # IN USE /HOME/P
+def get_table_p():
+    return {'responses':
+        [{'type': 'message', 'data': 'returned 1 results'},
+            {'type': 'table',
+             'data': {'headers': ['pk', 'p', 'download'],
+                      'rows': [{'pk': 1,
+                                'p': 'aa',
+                                'download': 'false'
+                                },
+                               {'pk': 2,
+                                'p': 'bb_bla2',
+                                'download': 'false'
+                                }, ]
+                      }
+             },
+        ],
+        'had_error': False,
+        'response_type': 'some_type'
+    }
 
 @app.route('/C')
 def get_table2():
@@ -198,7 +219,7 @@ def get_t():
             'response_type': 'some_type'
             }
 
-@app.route('/TPage/pk', methods=['POST', 'GET'])
+@app.route('/TPage/pk', methods=['POST', 'GET']) # todo need to do this over all filters like /TPage/name etc
 def get_t2():
     print("/TPage/pk")
     request_id = request.data.decode()
@@ -325,9 +346,8 @@ def get_t2():
             'response_type': 'some_type'
             }
 
-
-@app.route('/PPage', methods=['POST', 'GET'])
-def get_P():
+@app.route('/Home/P', methods=['POST', 'GET'])
+def get_p_one():
     request_id = request.data.decode()
     print(request_id)
     if request_id:
@@ -335,17 +355,17 @@ def get_P():
                     [{'type': 'message', 'data': 'returned 1 results'},
                      {'type': 'message', 'data': 'table title1'},
                      {'type': 'table',
-                      'data': {'headers': ['ou', 'value'],
-                               'rows': [{'ou': request_id,
+                      'data': {'headers': ['ppkey', 'value'],
+                               'rows': [{'ppkey': request_id,
                                          'value': 'ttyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy',
                                          },
-                                        {'ou': 'bla2',
+                                        {'ppkey': 'bla2',
                                          'value': 'aa2',
                                          },
-                                        {'ou': 'bla3',
+                                        {'ppkey': 'bla3',
                                          'value': 'aa3',
                                          },
-                                        {'ou': 'bla4',
+                                        {'ppkey': 'bla4',
                                          'value': 'aa4',
                                          },
                                         ]
@@ -450,6 +470,130 @@ def get_P():
             'had_error': False,
             'response_type': 'some_type'
             }
+# @app.route('/PPage', methods=['POST', 'GET'])
+# def get_P():
+#     request_id = request.data.decode()
+#     print(request_id)
+#     if request_id:
+#         return {'responses':
+#                     [{'type': 'message', 'data': 'returned 1 results'},
+#                      {'type': 'message', 'data': 'table title1'},
+#                      {'type': 'table',
+#                       'data': {'headers': ['ou', 'value'],
+#                                'rows': [{'ou': request_id,
+#                                          'value': 'ttyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy',
+#                                          },
+#                                         {'ou': 'bla2',
+#                                          'value': 'aa2',
+#                                          },
+#                                         {'ou': 'bla3',
+#                                          'value': 'aa3',
+#                                          },
+#                                         {'ou': 'bla4',
+#                                          'value': 'aa4',
+#                                          },
+#                                         ]
+#                                }
+#                       },
+#
+#                      ],
+#                 'had_error': False,
+#                 'response_type': 'some_type'
+#                 }
+#     return {'responses':
+#                 [{'type': 'message', 'data': 'returned 1 results'},
+#                  {'type': 'message', 'data': 'table title1'},
+#                  {'type': 'table',
+#                   'data': {'headers': ['key', 'value'],
+#                            'rows': [{
+#                                'key': 'blarrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',
+#                                'value': 'aa',
+#                            },
+#                                {'key': 'bla2',
+#                                 'value': 'aa2',
+#                                 },
+#                                {'key': 'bla3',
+#                                 'value': 'aa3',
+#                                 },
+#                                {'key': 'bla4',
+#                                 'value': 'aa4',
+#                                 },
+#                                {'key': 'bla5',
+#                                 'value': 'aa5',
+#                                 },
+#                                {'key': 'bla6',
+#                                 'value': 'aa6',
+#                                 },
+#                                {'key': 'bla7',
+#                                 'value': 'aa7',
+#                                 },
+#                                {'key': 'bla8',
+#                                 'value': 'aa8',
+#                                 },
+#                                {'key': 'bla9',
+#                                 'value': 'aa9',
+#                                 },
+#                                {'key': 'bla10',
+#                                 'value': 'aa10',
+#                                 },
+#                                {'key': 'bla11',
+#                                 'value': 'aa11',
+#                                 },
+#                                {'key': 'bla12',
+#                                 'value': 'aa12',
+#                                 },
+#                                {'key': 'bla13',
+#                                 'value': 'aa13',
+#                                 },
+#                                {'key': 'bla14',
+#                                 'value': 'aa14',
+#                                 },
+#                                {'key': 'bla15',
+#                                 'value': 'aa15',
+#                                 },
+#                                {'key': 'bla16',
+#                                 'value': 'aa16',
+#                                 },
+#                                {'key': 'bla17',
+#                                 'value': 'aa17',
+#                                 },
+#                            ]
+#                            }
+#                   },
+#                  {'type': 'message', 'data': 'table title2'},
+#                  {'type': 'table',
+#                   'data': {'headers': ['pk', 'name', 'status', 'stam'],
+#                            'rows': [{'pk': 1,
+#                                      'name': 'aa',
+#                                      'status': 'aamoshe',
+#                                      'stam': 'aastamv'
+#                                      },
+#                                     {'pk': 2,
+#                                      'name': 'bb_bla2',
+#                                      'status': 'bbmoshe2',
+#                                      'stam': 'bbstamv2'
+#                                      }, ]
+#                            }
+#                   },
+#                  {'type': 'message', 'data': 'table title3'},
+#                  {'type': 'table',
+#                   'data': {'headers': ['pk2', 'name2', 'status2', 'date'],
+#                            'rows': [{'pk2': 1,
+#                                      'name2': 'bla',
+#                                      'status3': 'moshe',
+#                                      'date': datetime.now()
+#                                      },
+#                                     {'pk2': 2,
+#                                      'name2': 'bla2',
+#                                      'status2': 'moshe2',
+#                                      'date': datetime.now()
+#                                      }, ]
+#                            }
+#                   },
+#                  ],
+#             'had_error': False,
+#             'response_type': 'some_type'
+#             }
 
 
 @app.route('/P/pk', methods=['POST', 'GET'])
