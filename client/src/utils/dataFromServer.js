@@ -6,6 +6,7 @@ import os_android from '../images/os_android.png';
 import "../Styles/GlobalStyle.css"
 import "../fonts/Ubuntu-Regular.ttf"
 import download from '../images/download.png';
+// import { onClickImageFunc } from '../Components/PPage'
 
 export function getDataFromServer(route) {
 
@@ -82,8 +83,16 @@ export function sendDataToServer2(route, data_to_send) {
     return finalData //list of dict
 }
 
-
 function get_parse_columns_filters(next_page_route = null, image_src = null) {
+    const onClickImageFunc = e => { //TODO fix this on click
+        console.log("hello on click")
+        console.log(e.target.id)
+        console.log(e.target)
+        //send to server pk to download
+        let route = process.env.REACT_APP_HOST + '/' + 'download';
+        let data = sendDataToServer(route, e.target.id)
+        console.log(data)
+    }
     let filters_dict =
     {
         date: {
@@ -119,7 +128,8 @@ function get_parse_columns_filters(next_page_route = null, image_src = null) {
                     width="40"
                     height="40"
                     alt={image_src}
-                    onclick="myfunction()"
+                    id={cell.row.values['pk']} //TODO check how to get this without hardcoded
+                    onClick={onClickImageFunc}
                 />
                 //  <div class="dropdown">
 
